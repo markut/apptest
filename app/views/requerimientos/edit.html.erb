@@ -1,0 +1,36 @@
+
+<div class="card">
+	<div class="card-header text-center">
+		Editar requerimiento
+	</div>
+	<div class="card body text-center">
+	<%= form_for @requerimiento do |f| %>	
+		<div class="form-group">
+			<%= f.hidden_field :usuario_id, class: 'form-control', placeholder:'ID' %>
+		</div>
+		<div class="form-group row">
+			<%= f.label :fecha, class: 'col-sm-4 col-form-label' %>
+			<div class="col-sm-7">
+		      <%= f.date_field :fecha, class: 'form-control', placeholder:'Fecha' %>
+		    </div>		
+		</div>
+		<div class="form-group row">
+			<%= f.label :asunto, class: 'col-sm-4 col-form-label' %>
+			<div class="col-sm-7">
+		      <%= f.text_field :asunto, class: 'form-control', placeholder:'Asunto' %>
+		    </div>		
+		</div>
+		<div class="form-group row">
+			<%= f.label :notas, class: 'col-sm-4 col-form-label' %>
+			<div class="col-sm-7">
+		      <%= f.text_area :notas, class: 'form-control', placeholder:'Notas' %>
+		    </div>		
+		</div>
+		<div class="text-center my-4">
+			<%= button_tag 'Guardar', class: 'btn btn-primary mx-2' %>
+			<%= link_to 'Cancelar', requerimientos_path, class: 'btn btn-danger'%>
+		</div>
+
+		<%end %>
+	</div>
+</div>
