@@ -14,7 +14,7 @@
     	</div>
     	<div class="col-6 text-left">
     	<p class="card-text">Fecha Actualización: <%= @requerimiento.updated_at%></p>
-		<%= button_to 'Borrar', requerimiento_path(@requerimiento), class: 'btn btn-danger', method: :delete, :onclick => "return confirm('Are you sure you want to delete this post?')" %>
+		<%= button_to 'Borrar', requerimiento_path(@requerimiento), class: 'btn btn-danger', method: :delete, :onclick => "return confirm('Esta seguro de borrar el registro?')" %>
     	</div>
     </div>
   </div>
@@ -23,3 +23,22 @@
 	<%= link_to 'Nuevo requerimiento', new_requerimiento_path, class: 'text-primary'%>
   </div>
 </div>
+
+<div class="mt-5">
+	<div class="text-right">
+		<%= link_to 'NEW Seguimiento', new_seguimiento_path(id: params[:id]), class: 'btn btn-primary', remote:true %>
+		<%# link_to 'NEW Seguimiento TRAD', new_seguimiento_path(id: params[:id]), class: 'btn btn-primary' %>
+	</div>
+</div>
+
+
+<div class="row my-3" id="seguimiento-container">
+  	<% @requerimiento.seguimiento.each do |seguimiento| %>
+  		<%= render '/seguimientos/parcial/cuerpo_seguimiento', seguimiento: seguimiento%>
+
+    <% end %>
+</div>
+
+
+<%=render 'requerimientos/parcial/modal_nuevo_seguimiento'%>
+<%=render 'requerimientos/parcial/modal_edit_seguimiento'%>

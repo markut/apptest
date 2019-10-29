@@ -1,0 +1,37 @@
+
+<div class="card">
+	<div class="card-header text-center">
+		Nuevo Seguimiento
+	</div>
+	<div class="card body text-center">
+	<%= form_for @seguimiento do |seguimiento| %>	
+		<div class="form-group">
+			<%= seguimiento.hidden_field :requerimiento_id, class: 'form-control', placeholder:'ID' %>
+		</div>
+		<div class="form-group row">
+			<%= seguimiento.label :titulo, class: 'col-sm-4 col-form-label' %>
+			<div class="col-sm-7">
+		      <%= seguimiento.text_field :titulo, class: 'form-control', placeholder:'Titulo' %>
+		    </div>		
+		</div>
+		<div class="form-group row">
+			<%= seguimiento.label :descripcion, class: 'col-sm-4 col-form-label' %>
+			<div class="col-sm-7">
+		      <%= seguimiento.text_field :descripcion, class: 'form-control', placeholder:'Descripcion' %>
+		    </div>		
+		</div>
+		<div class="form-group row">
+			<%= seguimiento.label :estado, class: 'col-sm-4 col-form-label' %>
+			<div class="col-sm-7">
+		      <%= seguimiento.text_field :estado, class: 'form-control', placeholder:'Estado' %>
+		    </div>		
+		</div>
+		<div class="text-center my-4">
+			
+			<%= button_tag 'Guardar', class: 'btn btn-primary mx-2' %>
+			<%= link_to 'Cancelar', requerimientos_path, class: 'btn btn-danger'%>
+		</div>
+
+		<%end %>
+	</div>
+</div>
