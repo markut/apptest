@@ -1,0 +1,123 @@
+<h1>Rails Learning</h1>
+
+Get: Es un metodo o verbo para obtener los valores
+Post: Para Crear
+update: actualizar
+Delete:Borrar
+Path
+
+
+
+<div>
+<h1>Generadores de Rails</h1>
+
+adminmaq@adminmaq-L305:~/Documents/appmaqc$ rails generate  / rails g  (Caulquier de las dos opciones)
+Running via Spring preloader in process 3589
+Usage: rails generate GENERATOR [args] [options]
+
+General options:
+  -h, [--help]     # Print generator's options and usage
+  -p, [--pretend]  # Run but do not make any changes
+  -f, [--force]    # Overwrite files that already exist
+  -s, [--skip]     # Skip files that already exist
+  -q, [--quiet]    # Suppress status output
+
+Please choose a generator below.
+
+Rails:
+  application_record
+  assets
+  channel
+  controller
+  generator
+  helper
+  integration_test
+  jbuilder
+  job
+  mailer
+  migration
+  model
+  resource
+  responders_controller
+  scaffold
+  scaffold_controller
+  system_test
+  task
+
+ActiveRecord:
+  active_record:application_record
+  active_record:devise
+
+Coffee:
+  coffee:assets
+
+Devise:
+  devise
+  devise:controllers
+  devise:install
+  devise:views
+
+Js:
+  js:assets
+
+Mongoid:
+  mongoid:devise
+
+Responders:
+  responders:install
+
+TestUnit:
+  test_unit:generator
+  test_unit:plugin
+
+
+</div>
+
+<h1>Tambien hay una funcion para Eliminar o eliminar</h1>
+
+adminmaq@adminmaq-L305:~/Documents/appmaqc$ rails distroy  / rails d  (Caulquier de las dos opciones)
+
+<h1>Controladores</h1>
+Es el encargador, despues del enrutador, recibir una peticion, es enviada por un usuario. El controlar se encarga de almacenar, o enviar alguna respuest
+
+El controlar es el encargado de saber que hacer con la petición (Si quiere almacenar, o responder con Html), tiene que exisitir una respuesta de nuestro servidor.
+
+
+
+<h2>Control + P = para buscar archvos dentro de Sublime</h2>
+
+<h1>Active Record</h1>
+Es una herramienta dentro de la capa del modelo.
+
+Modelo: Es la capa de respoder los datos de nuestra aplicacion. 
+
+Nos facilita la forma de crear los objetos de nuestro modelo. ORM (Object Relationnal Mapping)
+Manipulacion de datos por Objetos, se puede realizar propiedades sin propiedad de SQL
+
+-Representar modelos y datos
+-Representar realcinones entre modelos
+-Validaciones de modelos antes de ser persistidos
+-Realizar operaciones de base de datos de una manera orientada a objetos
+
+<h1>CONVENCIONES</h1>
+
+Nuestro active record, utiliza convecnioensde nomeclatguras, para tener las correraciones entre modelos y las tablas de la base de datos, es importante tener en cuenta.
+
+Modelo - Singular con CamelCase
+Tabla - Plural con underscore
+
+Model/Class  	|   table/Schema
+Article 		|	articles
+LineItem 		| 	line_items
+Deer 			| 	deers
+Mouse 			| 	mice
+Person 			|	people
+
+
+
+<table>
+	<td>
+		<tr>model / Class</tr>
+		<tr>Article</tr>
+	</td>
+</table>

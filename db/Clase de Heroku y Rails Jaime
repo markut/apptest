@@ -1,0 +1,261 @@
+se crea una nueva aplicacion en heroku
+se agrega la abse de datos postgress la gratuita
+
+una vez se crea la base de datos, Heroku crea las variables de entorno
+
+
+imprimimos las variables de entorno
+
+cat .bash_profile
+
+es muy importante editar las varibles configuracion, NO usar la base de datos de produccion
+
+
+modelos -> base de datos
+controlles - base de datos y vistas
+vistas -> son las visitas y diseños
+
+filosofia de Rails
+
+DRY =  Dont repeat yourself (no te repitas a ti mismo), no andes copiando el codigo de un lugar a otro
+
+convenciones = se trabaj con convecniones (
+controladores = plural
+modelos = singolar)
+
+se ininica git init
+$ heroku git
+
+$git push heroku master
+
+
+aplicaicon para recibir requerimientos !!!!!!!1
+
+TAREA: se necesita un usuario -> un espacio para crear los requerimientos ->
+
+devise GEM, se descarga la gema de Devise
+gem 'devise' en el Gemfile
+
+$rails generate devise:install
+
+Running via Spring preloader in process 21956
+      create  config/initializers/devise.rb
+      create  config/locales/devise.en.yml
+===============================================================================
+
+Some setup you must do manually if you haven't yet:
+
+  1. Ensure you have defined default url options in your environments files. Here
+     is an example of default_url_options appropriate for a development environment
+     in config/environments/development.rb:
+
+       config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+     In production, :host should be set to the actual host of your application.
+
+  2. Ensure you have defined root_url to *something* in your config/routes.rb.
+     For example:
+
+       root to: "home#index"
+
+  3. Ensure you have flash messages in app/views/layouts/application.html.erb.
+     For example:
+
+       <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+
+  4. You can copy Devise views (for customization) to your app by running:
+
+       rails g devise:views
+
+===============================================================================
+
+
+https://github.com/plataformatec/devise 
+
+sigues los paso a paso que va indicado el archivo y el terminal
+
+En Gemfile se purede crear grupos, si es solo desarrollo o pruebas.
+
+Se coloca al principio dle codigo de Gemfile, para que sea visible en todos los grupos
+
+automatic action mails url (para que funcione con varias variables de URL)
+gem 'action_mailer_auto_url_options'
+gem "action_mailer_auto_url_options"
+
+
+las notificaiones que se indica en los pasos, encima de <%=yeild %>
+entre body 
+
+para revisar el tema de la base de datos, despues de ejeuctar MODEL
+
+$rails db:migrate  (migra la base de datos) (revisar masivamente como se quita los comentarios)
+
+voy al archivo migrate/ 4252345234652345_devise
+se quita los comentarios
+
+
+se va a config/initialzier /  devise.rb
+
+se debe entrar a configurar el archivo
+
+busca rememberable (puede ser 2 o 3 week)
+
+confirmable (Casi todos esta en comentarios, se quita el comentario para que funcione. todos estan en config.name_etiqueta)
+
+
+rails c (entra al servidor)
+
+User.attribute_names, se va a conectar a la ba ase de datos, muetra todas las columnas y registros de la tabla
+
+rails route (muestra las rutas del proyecto) se pueden utilizar para crear un nuevo usuario o 
+
+
+
+spring stop (para Rails, cuando se corre por primera vez, la aplicacion, rendireicianzod y demas.) Porque muchas cosas las guarda en cache (los detiene con las variable de entorno)
+
+se accede a la BD por el nombre del modelo
+User.emai
+
+User.find (1) (busca con ID=1)
+
+rails routes (para hacer el verdo adecuado{get-post-delete}
+
+<%  %> (operacion Invisible en Rails)
+<%=  %> (operacion Visible en Rails)
+
+vamos a link de registro
+
+registro
+http://localhost:5000/users/sign_up
+
+iniciar sesion
+http://localhost:5000/users/sign_in
+
+va primero la accion y despues el controlar
+
+<%= link_to 'Cerrar Sesion', destroy_user_session_path, method: :delete %> 
+
+Se peude agregar condicionales, el tema de susaurios se maneja por Gemas
+GET: llamando sin mayor numero de parametros
+
+
+
+VAMOS A MEJORAR EL DISEÑO
+
+se ingresa a Bootstrap
+
+gem boostrap en google, para descargar e instalar
+
+se agrega al Gemfile.
+
+tambien instalar las gemas de popper_js
+
+despues se da bundle install
+
+sigue todos los pasos de Gem bootstrap
+
+se debe cerrar y volver a ejecutar el servidor
+
+
+
+dentro de bootstap, se puede crear carpetas parciales, dentro de los vistas
+
+como parcial!!!!!
+los archivos se deben crear como _name_file.erb se agrega el codigo
+
+<%= render 'layauts/parcial/barra_de_navegacion'%>
+_barra_de_navegacion.html.erb (nombre para archivos parciales se coloca)
+
+
+
+
+
+
+
+
+
+
+
+
+=====================================================================================================
+
+rails field type
+
+rails g generarte resource requerimiento user:reference asunto:string notas:text fecha:date
+
+se 
+
+definir en el controlaro que siempre existe
+
+def index
+end
+
+
+def new
+	@requerimiento = Requerimineto.new 
+	//@user : current_user
+end
+en la vista se crea la vista de requerimiento
+
+
+dentro de la configuracion de GEM DEVISE, otros helps como se restringe los accesos de la aplicacion.
+
+before_action: autenticid_user! (REVISAR documentacion de Git Devise)
+
+devise, guarad el requerimineto en alguna parte guarda en cache el link que queria acceder
+
+se hace los cambios en controlar y la vista
+
+<%= link_to 'Nuevo requerimiento', new_requerimiento_path,  %>
+
+
+
+NUEVO REQUERIMIENTO
+
+<%= form_for @requerimiento do |f| %>
+
+<%= f.label :user_id  %>(_id porque es reference) 
+<%= f.label 'Autor'  %> (_id porque es reference)
+
+<%= f.text_field :user_id  %>
+<%end %>
+
+Se puede entrar a revisar en Bootstrap form, copiar el texto, y ponerle DIV y class para darle estilos
+
+<div class="form-group">
+<%= form_for @requerimiento do |f| %>
+
+<%= f.label :user_id  %>(_id porque es reference) 
+<%= f.label 'Autor'  %> (_id porque es reference)
+
+<%= f.text_field :user_id  %>
+<%end %>
+</div>
+
+crear un boton
+<div class "text-center my-4">
+<%= button_tag 'guardad', class 'btn btn-primary'
+Aprnede convenciones de RAILS
+
+ctl + D (sublime hace que reemplace todo lo que tenga el mismo nombre
+
+underscore o cammel (IMPORTNATE)
+
+PARA CREAR el registrdentor de requerimiento_controller.rb
+
+def create
+	@requerimiento = Requerimiento.new(params_para_requerimiento)
+	@requerimeinto.save
+
+	redirect_to @requerimiento
+end
+
+def show
+	@requerimiento = Requerimiento.find(params[:id])
+end
+
+private
+	def params_para_requerimiento
+		param.require(:requerimiento).permit(:user_id,:asunto,:notas,:fecha)
+	end
