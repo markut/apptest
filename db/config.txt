@@ -1,0 +1,35 @@
+[[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+export AIRBRAKE_API_KEY=0d37d3c555c9a8c0df0bcdb1cb78dda7
+export AIRBRAKE_=195499
+export AWS_LUMNI_ACCESS_KEY_ID=AKIAJ7SYR7SJQHQY34GQ
+export AWS_LUMNI_BUCKET_NAME=lumni4staging
+export AWS_LUMNI_BUCKET_URL=https://lumni4staging.s3.amazonaws.com
+export AWS_LUMNI_SECRET_ACCESS_KEY=i+DJX+8ML8+3WadLOR+B7fSFVRHJgb9L6xP6eFJy
+export DATABASE_URL=postgres://siqnjtpxbuqfbu:af2bc2c19587f77e27cc4156abe64519f3e25bc9d33648bf58929f6f4fb646a1@ec2-174-129-43-40.compute-1.amazonaws.com:5432/d9900e161p0olg
+export GMAIL_PASSWORD=r3s34rch
+export GMAIL_USER=lumniportal@gmail.com
+export LANG=en_US.UTF-8
+export NEW_RELIC_LICENSE_KEY=5c13b37bb9352caaafd1454420335aaa6179e77f
+export NEW_RELIC_LOG=stdout
+export RACK_ENV=development
+export RAILS_ENV=development
+export RAILS_LOG_TO_STDOUT=enabled
+export RAILS_SERVE_STATIC_FILES=enabled
+export RECAPTCHA_SECRET_KEY=6Lcgxr0UAAAAAG_WkNdmQgZFb8dihyLpz6YaxfMX
+export RECAPTCHA_SITE_KEY=6Lcgxr0UAAAAAMwrIDe1UOQ1Tj1XQ86xcPGkrew8
+export REDIS_URL=redis://h:p1222bde2173fc1f8373762514040607782ac1b3becb3bb4f59912da107097043@ec2-3-227-28-169.compute-1.amazonaws.com:20639
+export SALESFORCE_API_VERSION=41.0
+export SALESFORCE_CLIENT_ID=3MVG9sG9Z3Q1Rlbfw7OZ6s.uMhxUv27Oo2W_3xvtAU8SoQxIfvmLIohiy90utdT.1n7eYzD7akEnp6Dp5ivMz
+export SALESFORCE_CLIENT_SECRET=3351194297719843452
+export SALESFORCE_FULL_URL=https://lumni.my.salesforce.com
+export SALESFORCE_PASSWORD=r3s34rch345
+export SALESFORCE_SECURITY_TOKEN=iIP5iZREprdA7Ac5HC9eabTr
+export SALESFORCE_URL=lumni.my.salesforce.com
+export SALESFORCE_USERNAME=jaime.castillo@lumni.net
+export SECRET_KEY_BASE=3ea8fe34035fcb0d646880717816bb400196255c21328097f2bee6acff98a40c4c1c384950e893dcf84a2c3b6c95d179bb0eccea346f7244cee577d94e00da97
+export SENDGRID_API_KEY=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
+export SENDGRID_PASSWORD=skgycas06067
+export SENDGRID_USERNAME=app108549072@heroku.com
