@@ -1,0 +1,75 @@
+bundle update
+gem install libv8 -v '7.3.492.27.1' --source
+gem install libv8 -v '7.3.492.27.1'
+bunlde update
+apt remove nodejs
+sudo apt update nodejs
+sudo npm cache clean -f
+sudo npm install -g n
+sudo n stable
+sudo apt-get install curl
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+sudo apt-get install -y nodejs
+sudo apt autoremove
+sudo apt-get install -y nodejs
+npm
+sudo apt install npm
+npm
+sudo apt autoremove
+npm -v
+sudo npm cache clean -f 
+sudo n stable
+sudo apt-get install --reinstall nodejs-legacy
+sudo n rm 10.16.3
+cd /usr/lib/
+ls
+cd nodejs/
+cd ..
+sudo apt-get purge --auto-remove nodejs
+sudo apt-get purge nodejs
+sudo apt-get autoremove
+nodejs -v
+sudo apt-get install curl
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+sudo apt-get install nodejs
+nodejs -v
+sudo npm cache clean -f
+sudo npm install -g n
+sudo n stable
+nodejs -v
+ls -a
+cd .node_repl_history
+vi .node_repl_history
+sudo apt-get purge --auto-remove nodejs
+sudo apt-get purge nodejs
+sudo apt-get autoremove
+wget https://nodejs.org/dist/v10.16.3/node-v10.16.3-linux-x64.tar.xz
+mkdir -p /opt/nodejs
+sudo mkdir -p /opt/nodejs
+ls /opt/
+sudo tar -xvzf node-v10.16.3-linux-x64.tar.xz -C /opt/nodejs/
+cd node-v10.16.3-linux-x64/
+wget https://nodejs.org/dist/v10.16.3/node-v10.16.3.tar.gz
+sudo tar -xvzf node-v10.16.3.tar.gz -C /opt/nodejs/
+cd /opt/nodejs
+mv node-v10.16.3 10.16.3
+sudo mv node-v10.16.3 10.16.3
+sudo ln -s 10.16.3 current
+sudo ln -s /opt/nodejs/current/bin/node /bin/node
+
+La version del Proyecto staginglumni4 NO debe detectar nodejs -v,
+
+adminmaq@adminmaq-L305:~/staginglumni4$ nodejs -v
+-bash: /usr/bin/nodejs: No such file or directory
+
+El sistema debe reconocer la version que se descargo en los pasos anteriores 
+
+
+wget https://nodejs.org/dist/v10.16.3/node-v10.16.3.tar.gz
+sudo tar -xvzf node-v10.16.3.tar.gz -C /opt/nodejs/
+cd /opt/nodejs
+sudo mv node-v10.16.3 10.16.3
+sudo ln -s 10.16.3 current
+sudo ln -s /opt/nodejs/current/bin/node /bin/node
+
+Ya con estos cambios, se vuelve a ejecutar $rails s y OK
